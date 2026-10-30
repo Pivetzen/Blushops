@@ -21,7 +21,7 @@ function renderizarProdutos(produtos) {
   produtos.forEach(({ nome, imagem, categoria, plataforma, link, descricao }) => {
     const platLower = plataforma.toLowerCase();
     
-    // Define a classe temática por plataforma
+    // Define as classes e textos por plataforma
     let badgeClass = "badge-outros";
     let btnClass = "btn-outros";
     let btnText = "Ver Oferta ➔";
