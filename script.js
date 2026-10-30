@@ -37,7 +37,7 @@ function renderizarProdutos(produtos) {
     }
 
     // Formatação do Preço Estimado
-    const textoPreco = preco ? `Preço estimado: a partir de ${preco}` : 'Preço: Consulte na oferta';
+    const textoPreco = preco ? `Preço: a partir de ${preco}` : 'Preço: Consulte na oferta';
 
     const card = `
       <article class="card">
