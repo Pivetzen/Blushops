@@ -5,7 +5,6 @@
   --text-dark: #222222;
   --text-muted: #666666;
   --shopee-color: #ee4d2d;
-  --hotmart-color: #f05323;
   --border-radius: 12px;
 }
 
@@ -162,15 +161,15 @@ body {
   right: 10px;
   padding: 4px 10px;
   border-radius: 20px;
-  color: #fff;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.badge-shopee { background-color: var(--shopee-color); }
-.badge-hotmart { background-color: var(--hotmart-color); }
-.badge-outros { background-color: var(--primary-color); }
+/* Estilização específica das plataformas (Cores solicitadas) */
+.badge-shopee { background-color: var(--shopee-color); color: #ffffff; }
+.badge-hotmart { background-color: #e60000; color: #000000; }
+.badge-outros { background-color: var(--primary-color); color: #ffffff; }
 
 .card-body {
   padding: 16px;
@@ -216,15 +215,14 @@ body {
   padding: 10px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
-  color: white;
   transition: opacity 0.2s;
 }
 
-.btn-shopee { background-color: var(--shopee-color); }
-.btn-hotmart { background-color: var(--hotmart-color); }
-.btn-outros { background-color: var(--primary-color); }
+.btn-shopee { background-color: var(--shopee-color); color: #ffffff; }
+.btn-hotmart { background-color: #e60000; color: #000000; }
+.btn-outros { background-color: var(--primary-color); color: #ffffff; }
 
 .btn-comprar:hover {
   opacity: 0.9;
