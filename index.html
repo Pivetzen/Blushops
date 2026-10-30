@@ -1,25 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Produtos Afiliados</title>
+  <title>Blushops | Vitrine de Achadinhos e Ofertas</title>
+  
+  <!-- Fonte e Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- PapaParse para leitura perfeita de CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
+
   <header class="header">
-  <div class="container-header">
-    <img src="https://cdn-icons-png.flaticon.com/256/126/126510.png" alt="Logo Blushops" class="logo" />
-    <h1>Blushops</h1>
-  </div>
-</header>
-  <div class="container">
-    <div style="margin-bottom: 20px;">
-      <select id="filtro-categoria"></select>
-      <select id="filtro-plataforma"></select>
+    <div class="header-container">
+      <div class="brand">
+        <img src="https://cdn-icons-png.flaticon.com/256/126/126510.png" alt="Logo Blushops" class="logo" />
+        <h1>Blushops</h1>
+      </div>
+      <div class="search-box">
+        <input type="text" id="input-busca" placeholder="Buscar achadinhos..." />
+      </div>
     </div>
-    <div id="produtos"></div>
-  </div>
+  </header>
+
+  <main class="container">
+    <!-- Barra de Filtros -->
+    <section class="filters-bar">
+      <div class="filter-group">
+        <label for="filtro-categoria">Categoria:</label>
+        <select id="filtro-categoria">
+          <option value="">Todas as categorias</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filtro-plataforma">Plataforma:</label>
+        <select id="filtro-plataforma">
+          <option value="">Todas as plataformas</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Contador e Contador de Resultados -->
+    <div class="results-info">
+      <span id="total-produtos">Carregando produtos...</span>
+    </div>
+
+    <!-- Grid de Produtos -->
+    <section id="produtos-grid" class="grid-container"></section>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
