@@ -16,15 +16,29 @@
 </head>
 <body>
 
-  <!-- Cabeçalho Fixo Contendo Logo, Busca, Filtros e Aviso Legal -->
+  <!-- Cabeçalho Fixo Completo -->
   <header class="header">
     <div class="header-container">
       <div class="brand">
         <img src="https://cdn-icons-png.flaticon.com/256/126/126510.png" alt="Logo Blushops" class="logo" />
         <h1>Blushops</h1>
       </div>
-      <div class="search-box">
-        <input type="text" id="input-busca" placeholder="Buscar achadinhos..." />
+
+      <!-- Área de Busca e Botões de Ação Rápida -->
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="input-busca" placeholder="Buscar achadinhos..." />
+        </div>
+        
+        <!-- Botão de Ajuda (Passo a Passo) -->
+        <button id="btn-ajuda" class="btn-header-action btn-help" title="Passo a passo de como comprar">
+          ❓ Como Comprar
+        </button>
+
+        <!-- Botão Direto para o WhatsApp -->
+        <a href="https://wa.me/5585987804628?text=Olá!%20Vim%20pelo%20Blushops%20e%20preciso%20de%20ajuda." target="_blank" rel="noopener noreferrer" class="btn-header-action btn-whatsapp" title="Fale conosco no WhatsApp">
+          💬 Suporte WhatsApp
+        </a>
       </div>
     </div>
 
@@ -52,6 +66,40 @@
       <p>As plataformas Shopee e Hotmart são apenas ferramentas de divulgação. Os produtos e serviços aqui apresentados são de responsabilidade de seus criadores.</p>
     </div>
   </header>
+
+  <!-- Modal / Janela de Passo a Passo de Ajuda -->
+  <div id="modal-ajuda" class="modal-overlay">
+    <div class="modal-content">
+      <button id="btn-fechar-modal" class="modal-close">&times;</button>
+      <h2>📖 Guia Prático: Como Comprar</h2>
+      <p class="modal-subtitle">Tire suas dúvidas sobre como realizar suas compras com segurança nas nossas plataformas parceiras.</p>
+      
+      <div class="help-section">
+        <h3>🟠 Como comprar na Shopee (Produtos Físicos)</h3>
+        <ol>
+          <li><strong>Escolha o produto:</strong> Clique em "Ver na Shopee" no item desejado em nosso catálogo.</li>
+          <li><strong>Crie ou acesse sua conta:</strong> Caso não tenha cadastro, clique em "Cadastrar" no canto superior direito da Shopee usando seu e-mail, celular ou conta Google/Apple.</li>
+          <li><strong>Finalize o pedido:</strong> Selecione a variação desejada (cor, tamanho), insira seu endereço de entrega e escolha a forma de pagamento (Pix, boleto ou cartão).</li>
+        </ol>
+      </div>
+
+      <div class="help-section">
+        <h3>🔴 Como comprar na Hotmart (Cursos e Infoprodutos)</h3>
+        <ol>
+          <li><strong>Acesse o material:</strong> Clique em "Acessar Curso/Material" no card de seu interesse.</li>
+          <li><strong>Preencha seus dados:</strong> Na página de pagamento oficial da Hotmart, informe seu nome e e-mail com atenção (o acesso ao produto digital será enviado para este e-mail).</li>
+          <li><strong>Pagamento e Acesso:</strong> Conclua o pagamento (Pix ou cartão aprovam na hora). Você receberá os dados de login da área de membros diretamente no seu e-mail cadastrado.</li>
+        </ol>
+      </div>
+
+      <div class="modal-footer-help">
+        <p>Ainda com dúvidas? Fale diretamente conosco pelo WhatsApp:</p>
+        <a href="https://wa.me/5585987804628?text=Olá!%20Estou%20com%20dúvidas%20para%20comprar%20no%20Blushops." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-modal">
+          💬 Abrir WhatsApp (85) 98780-4628
+        </a>
+      </div>
+    </div>
+  </div>
 
   <main class="container">
     <!-- Contador de Resultados -->
