@@ -18,7 +18,7 @@ function renderizarProdutos(produtos) {
     return;
   }
 
-  produtos.forEach(({ nome, imagem, categoria, plataforma, link, descricao }) => {
+  produtos.forEach(({ nome, imagem, categoria, plataforma, link, descricao, preco }) => {
     const platLower = plataforma.toLowerCase();
     
     // Define as classes e textos por plataforma
@@ -36,6 +36,9 @@ function renderizarProdutos(produtos) {
       btnText = "Acessar Curso/Material ➔";
     }
 
+    // Formatação do Preço Estimado
+    const textoPreco = preco ? `Preço estimado: a partir de ${preco}` : 'Preço: Consulte na oferta';
+
     const card = `
       <article class="card">
         <div class="card-image-wrapper">
@@ -45,6 +48,7 @@ function renderizarProdutos(produtos) {
         <div class="card-body">
           <span class="card-category">${categoria}</span>
           <h2 class="card-title">${nome}</h2>
+          <div class="card-price">${textoPreco}</div>
           <p class="card-description">${descricao || 'Clique para conferir todos os detalhes na loja oficial.'}</p>
           <a class="btn-comprar ${btnClass}" href="${link}" target="_blank" rel="noopener noreferrer">
             ${btnText}
@@ -110,7 +114,8 @@ Papa.parse(csvUrl, {
         categoria: item["Categoria"]?.trim() || "Geral",
         plataforma: item["Plataforma"]?.trim() || "Outros",
         link: item["Link Afiliado"]?.trim() || "",
-        descricao: item["Descrição"]?.trim() || ""
+        descricao: item["Descrição"]?.trim() || "",
+        preco: item["Preco"]?.trim() || item["Preço"]?.trim() || ""
       }))
       // Filtra produtos que não sejam da Amazon e mantém apenas os válidos
       .filter(p => p.nome && p.link && p.plataforma.toLowerCase() !== "amazon");
