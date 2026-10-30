@@ -36,7 +36,7 @@ function renderizarProdutos(produtos) {
       btnText = "Acessar Curso/Material ➔";
     }
 
-    // Formatação do Preço Estimado
+    // Formatação do Preço
     const textoPreco = preco ? `Preço: a partir de ${preco}` : 'Preço: Consulte na oferta';
 
     const card = `
@@ -100,6 +100,28 @@ function aplicarFiltros() {
   renderizarProdutos(filtrados);
 }
 
+// Controle do Modal de Ajuda
+function configurarModal() {
+  const modal = document.getElementById("modal-ajuda");
+  const btnAjuda = document.getElementById("btn-ajuda");
+  const btnFechar = document.getElementById("btn-fechar-modal");
+
+  btnAjuda.addEventListener("click", () => {
+    modal.classList.add("active");
+  });
+
+  btnFechar.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  // Fecha ao clicar fora do conteúdo do modal
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+}
+
 // Carregamento usando PapaParse
 Papa.parse(csvUrl, {
   download: true,
@@ -122,6 +144,7 @@ Papa.parse(csvUrl, {
 
     preencherFiltros(todosProdutos);
     renderizarProdutos(todosProdutos);
+    configurarModal();
 
     // Eventos de escuta para atualização instantânea
     document.getElementById("filtro-categoria").addEventListener("change", aplicarFiltros);
