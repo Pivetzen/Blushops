@@ -166,9 +166,9 @@ body {
   text-transform: uppercase;
 }
 
-/* Estilização específica das plataformas (Cores solicitadas) */
+/* Estilização específica das plataformas */
 .badge-shopee { background-color: var(--shopee-color); color: #ffffff; }
-.badge-hotmart { background-color: #e60000; color: #000000; }
+.badge-hotmart { background-color: #000000; color: #ff0000; border: 1px solid #ff0000; }
 .badge-outros { background-color: var(--primary-color); color: #ffffff; }
 
 .card-body {
@@ -221,7 +221,7 @@ body {
 }
 
 .btn-shopee { background-color: var(--shopee-color); color: #ffffff; }
-.btn-hotmart { background-color: #e60000; color: #000000; }
+.btn-hotmart { background-color: #000000; color: #ff0000; border: 2px solid #ff0000; }
 .btn-outros { background-color: var(--primary-color); color: #ffffff; }
 
 .btn-comprar:hover {
